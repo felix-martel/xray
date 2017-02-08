@@ -1,0 +1,138 @@
+body {
+	background: url('../img/background1920x1080.jpg') no-repeat;
+}
+#play-button {
+	border: 3px solid rgba(255, 255, 255, 0.8);
+	color: rgba(255, 255, 255, 0.8);
+	border-radius: 100%;
+	height: 130px;
+	width: 130px;
+	font-size: 6rem;
+	background: none;
+	text-align: center;
+	margin-bottom: 28px;
+}
+#play-button:hover, .play-button.playing:hover {
+	background-color: rgba(255, 255, 255, 0.8);
+	color: rgb(51, 51, 51);
+}
+
+@keyframes pulse {
+	0% {
+		top: 100px;
+		left: 100px;
+		height: 0px;
+		width: 0px;
+	}
+	50% {
+		top: 0;
+		left: 0;
+		height: 200px;
+		width: 200px;
+	}
+	100% {
+		top: 100px;
+		left: 100px;
+		height: 0px;
+		width: 0px;
+	}
+}
+.outbeat {
+	position: relative;
+	height: 200px;
+	width: 200px;
+	border: 4px solid rgba(255, 255, 255, 0.8);
+	border-radius: 100%;
+}
+
+.inbeat {
+	position: relative;
+	top: 77px;
+	left: 77px;
+	height: 50px;
+	width: 50px;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 100%;
+	animation-name: pulse;
+	animation-duration: 0.9s;
+	animation-iteration-count: infinite;
+}
+.hidden {
+	display: none;
+}
+
+.left-toolbar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	padding: 15px;
+}
+
+
+.right-toolbar {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	padding: 15px;
+	width: 400px;
+}
+.offset {
+	height: 20vh;
+	width: 100%;
+}
+
+.now-playing {
+	text-align: center;
+}
+.now-playing span {
+	display: inline-block;
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 0 12px;
+	margin: 2px;
+	font-family: Scada, sans-serif;
+	font-size: 4rem;
+}
+
+.now-playing span:hover {
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.track {
+	font-style: italic;
+	font-weight: bold;
+}
+
+.vignettage {
+	position: fixed;
+}
+
+#vignettage-top {
+	top: 0;
+	height: 70px;
+	width: 100%;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+}
+
+#vignettage-bottom {
+	bottom: 0;
+	height: 70px;
+	width: 100%;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+#vignettage-right {
+	right: 0;
+	width: 70px;
+	height: 100%;
+	background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
+}
+
+#vignettage-left {
+	left: 0;
+	width: 50px;
+	width: 100%;
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+}
+/*#song-request {
+	width: 100px;
+}
