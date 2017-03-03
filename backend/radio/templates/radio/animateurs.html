@@ -1,0 +1,8 @@
+<h1>Animateurs</h1>
+<ul>
+  {% for anim in animateurs %}
+    <li><a href="{% url 'radio:animateur_details' anim.id %}">
+      {{anim.prenom}} {{anim.nom}}
+    </a></li>
+  {% endfor %}
+</ul>

@@ -2,6 +2,7 @@ from django.conf.urls import url
 
 from . import views
 
+app_name = 'radio'
 urlpatterns = [
     # ex: animateurs/
     url(r'^animateurs/$', views.animateurs_liste, name="animateurs_liste"),
