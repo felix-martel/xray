@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<div class="radio-container">
+  <h1>{{ emission.nom }}</h1>
+  <p>{{ emission.date_derniere_diffusion }} </p>
+  <h3>Dernières émissions :</h3>
+  <ul> {% for ep in derniers_enregistrements %}
+    <li class="episode-details">
+      <h3><span class="emission-titre">
+        <a href="{% url 'radio:enregistrement_details' ep.id %}">
+          {{ ep.emission.nom }} #{{ ep.edition_id }} : {{ ep.titre}}
+        </a></span>
+      </h3>
+      <h4><span class="titre">Emission du {{ ep.date_diffusion|date:'d/m'}}</span></h4>
+      <p><span class="description">{{ ep.description }}</span></p>
+      <button type="button" class="bouton-xray" onclick="togglePlayPause(this, 'enregistrement-{{emission.id}}-{{ep.edition_id}}');"><i class="fa fa-play"></i>Ecouter</button>
+      <div id="enregistrement-{{emission.id}}-{{ep.edition_id}}" class="waveform-container">{{ep.emission_url}}</div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

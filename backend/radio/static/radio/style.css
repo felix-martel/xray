@@ -1,0 +1,33 @@
+body {
+  font-family: Scada, sans-serif;
+  background: url("img/background1920x1080.jpg") repeat-y top left;
+}
+
+nav li {
+  display: inline-block;
+}
+nav li:hover {
+}
+
+li {
+  list-style-type: none;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+nav a{
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+nav a:hover {
+    background-color: rgba(230, 230, 230, 0.8);
+}
+/*
+.emission-image {
+  width: 10rem;
+}

@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+
+<div class="radio-container">
+  <li class="episode-details">
+    <h3><span class="emission-titre">
+      <a href="{% url 'radio:enregistrement_details' enregistrement.id %}">
+        {{ enregistrement.emission.nom }} #{{ enregistrement.edition_id }} : {{ enregistrement.titre}}
+      </a>
+    </span>
+    </h3>
+    <h4>
+    <span class="contributeurs-item emission-titre">
+      <a href="{% url 'radio:emission_details' enregistrement.emission.id %}">
+        {{enregistrement.emission.nom}}
+      </a></span>
+    <span class="titre">Emission du {{ enregistrement.date_diffusion|date:'d/m'}}</span></h4>
+    <p>
+      <span class="description">
+        {{ enregistrement.description }}
+      </span>
+    </p>
+    <button type="button" class="bouton-xray" onclick="togglePlayPause(this, 'enregistrement-{{enregistrement.emission.id}}-{{enregistrement.edition_id}}');"><i class="fa fa-play"></i>Ecouter</button>
+    <div id="enregistrement-{{enregistrement.emission.id}}-{{enregistrement.edition_id}}" class="waveform-container">{{enregistrement.emission_url}}</div>
+  </li>
+</div>
+
+{% endblock %}

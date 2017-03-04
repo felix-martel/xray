@@ -1,3 +1,7 @@
+{% extends "index.html" %}
+
+{% block content %}
+
 <h1>Animateurs</h1>
 <ul>
   {% for anim in animateurs %}
@@ -6,3 +10,4 @@
     </a></li>
   {% endfor %}
 </ul>
+{% endblock %}

@@ -1,0 +1,75 @@
+@media screen and (min-width: 1000px) {
+  .radio-container {
+    width: 900px;
+  }
+}
+
+.radio-container {
+  width: 95%;
+  margin: 0 auto;
+  padding: 4rem 4rem;
+}
+
+.emission-details {
+}
+.emission-titre  a, .titre {
+  text-decoration: none;
+  color: rgba(55, 55, 55, 1.0);
+  background-color: rgba(220, 220, 220, 0.7);
+  padding: 0.4rem 0.8rem;
+}
+.emission-titre a:hover, .titre:hover {
+  background-color: rgba(220, 220, 220, 0.9);
+}
+
+h3 .emission-titre, h3 .titre {
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+h4 .emission-titre, h4 .titre {
+  font-size: 1.4rem;
+}
+
+
+.contributeurs-item {
+  margin-right: 0.5rem;
+}
+
+.description {
+  color: rgba(220, 220, 220, 1);
+  background-color: rgba(50, 50, 50, 0.8);
+  font-size: 1.8rem;
+  line-height: 200%;
+  padding: 0.4rem 0;
+  margin: 1.5rem 0;
+
+}
+
+.reecouter-emission a, .bouton-xray {
+  border: 2px solid rgba(220, 220, 220, 0.7);
+  padding: 0.9rem 1.9rem;
+  background-color: rgba(50, 50, 50, 0.5);
+  color: rgba(220, 220, 220, 1);
+  border-radius: 0;
+}
+
+.reecouter-emission a:focus, .bouton-xray:focus {
+  outline: none;
+  border-color: rgba(220, 220, 220, 1);
+}
+
+.reecouter-emission a:hover, .bouton-xray:hover {
+  border-color: rgba(220, 220, 220, 0.9);
+  background-color: rgba(220, 220, 220, 0.7);
+  color: rgba(50, 50, 50, 1);
+}
+
+.reecouter-emission .fa, .bouton-xray .fa {
+  margin-right: 1rem;
+}
+
+.episode-details {
+  margin-bottom: 12rem;
+}

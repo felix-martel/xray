@@ -1,2 +1,16 @@
+{% extends "index.html" %}
+
+{% block content %}
+
 <h1>{{ animateur.prenom}} {{ animateur.nom}}</h1>
 <p>{{ animateur.role }} </p>
+<h4>Ses dernières émissions : </h4>
+<ul>
+  {% for enregistrement in ses_derniers_enregistrements %}
+    <li><a href="{% url 'radio:emission_details' enregistrement.id}">
+      <strong>{{ enregistrement.emission.nom }} : </strong>
+      {{ enregistrement.titre }}
+    </a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

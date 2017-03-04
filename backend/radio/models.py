@@ -18,12 +18,18 @@ class Emission(models.Model):
     image_url = models.CharField(max_length=200)
     date_derniere_diffusion = models.DateTimeField("Date de la derniere emission")
     contributeurs = models.ManyToManyField(Animateur)
+    description = models.TextField()
+    dernier_episode = models.ForeignKey('Enregistrement', null=True, related_name='+')
+
     def __str__(self):
         return self.nom
 
 class Enregistrement(models.Model):
     emission = models.ForeignKey(Emission)
+    edition_id = models.SmallIntegerField()
     titre = models.CharField(max_length=200)
+    emission_url = models.CharField(max_length=200, default='demo.mp3')
     date_diffusion = models.DateTimeField()
+    description = models.TextField()
     def __str__(self):
         return self.emission.nom + " du " + self.date_diffusion.strftime('%d/%m')

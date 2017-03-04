@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<h1>Derniers enregistrements</h1>
+<ul>
+  {% for enregistrement in enregistrements %}
+    <li>
+      <i>{{enregistrement.date_diffusion|date:"d/m"}} : </i>
+      <a href="{% url 'radio:enregistrement_details' enregistrement.id %}">
+      <strong>{{ enregistrement.emission.nom }} : </strong> {{enregistrement.titre}}</a></li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
