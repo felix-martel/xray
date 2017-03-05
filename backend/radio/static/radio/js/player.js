@@ -9,30 +9,56 @@ $(document).ready(function(){
 
   for (var i=0; i<containers.length; i++){
       var audio_container = containers[i];
-      console.log(audio_container.id)
+      /*console.log(audio_container.id)
       var audioURL = '../../../static/radio/audio/' + audio_container.innerHTML;
       var ws = WaveSurfer.create({
         container: '#' + audio_container.id,
         waveColor: 'rgba(200, 200, 200, 1.0)',
-        progressColor: '#cc0000',
+        progressColor: '#D63B27',
         cursorColor: 'transparent',
         barWidth: 3,
       });
       ws.load(audioURL);
       ws.on('ready', function () {
         console.log(audioURL + ' ready !');
-      });
+      });*/
+      ws = loadAudio(audio_container);
       waveforms[audio_container.id] = ws;
   }
   waveformReady = true;
 
 });
 
+function loadAudio(audio_container){
+  console.log(audio_container.id)
+  var audioURL = '../../../static/radio/audio/' + audio_container.innerHTML;
+  var ws = WaveSurfer.create({
+    container: '#' + audio_container.id,
+    waveColor: 'rgba(200, 200, 200, 1.0)',
+    progressColor: '#D63B27',
+    cursorColor: 'transparent',
+    barWidth: 3,
+  });
+  ws.load(audioURL);
+  ws.on('ready', function () {
+    console.log(audioURL + ' ready !');
+  });
+  return ws;
+}
+
 function togglePlayPause(el, target) {
-  if (waveformReady){
+  if (waveforms[target]){
     var ws = waveforms[target];
     ws.playPause();
-
-    $(el).find('.fa').toggleClass("fa-play fa-pause");
   }
+  else {
+    console.log(target);
+    var audio_container = document.getElementById(target);
+    ws = loadAudio(audio_container);
+    waveforms[target] = ws;
+    ws.on('ready', function () {
+      ws.play();
+    });
+  }
+  $(el).find('.fa').toggleClass("fa-play fa-pause");
 }

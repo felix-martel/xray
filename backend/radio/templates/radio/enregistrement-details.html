@@ -1,10 +1,11 @@
 {% extends "index.html" %}
 
+{% load static %}
 {% block content %}
 
 
 <div class="radio-container">
-  <li class="episode-details">
+  <li class="episode-details"   style="background-image: url('{% static 'radio/img/cover-' %}{{ enregistrement.emission.id }}.jpg');">
     <h3><span class="emission-titre">
       <a href="{% url 'radio:enregistrement_details' enregistrement.id %}">
         {{ enregistrement.emission.nom }} #{{ enregistrement.edition_id }} : {{ enregistrement.titre}}

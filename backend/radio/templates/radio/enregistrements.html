@@ -1,15 +1,24 @@
 {% extends "index.html" %}
 
+{% load static %}
 {% block content %}
 
-<h1>Derniers enregistrements</h1>
-<ul>
-  {% for enregistrement in enregistrements %}
-    <li>
-      <i>{{enregistrement.date_diffusion|date:"d/m"}} : </i>
-      <a href="{% url 'radio:enregistrement_details' enregistrement.id %}">
-      <strong>{{ enregistrement.emission.nom }} : </strong> {{enregistrement.titre}}</a></li>
-  {% endfor %}
-</ul>
+<div class="radio-container">
+  <ul> {% for ep in enregistrements %}
+    <li class="episode-details"  style="background-image: url('{% static 'radio/img/cover-' %}{{ ep.emission.id }}.jpg');">
+      <h3><span class="emission-titre">
+        <a href="{% url 'radio:enregistrement_details' ep.id %}">
+          {{ ep.emission.nom }} #{{ ep.edition_id }} : {{ ep.titre}}
+        </a></span>
+      </h3>
+      <h4><span class="titre">Emission du {{ ep.date_diffusion|date:'d/m'}}</span></h4>
+      <p><span class="description">{{ ep.description }}</span></p>
+      <button type="button" class="bouton-xray" onclick="togglePlayPause(this, 'enregistrement-{{ep.emission.id}}-{{ep.edition_id}}');"><i class="fa fa-play"></i>Ecouter</button>
+      <a class="bouton-xray" href="{% static 'radio/audio/' %}{{ep.emission_url}}" download="{{ep.emission.nom}} #{{ep.edition_id}}.mp3"><i class="fa fa-download"></i>Télécharger</a>
+      <div id="enregistrement-{{ep.emission.id}}-{{ep.edition_id}}" class="waveform-container-no-autoload">{{ep.emission_url}}</div>
+    </li>
+    {% endfor %}
+  </ul>
+</di>
 
 {% endblock %}

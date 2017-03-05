@@ -1,6 +1,14 @@
 body {
   font-family: Scada, sans-serif;
-  background: url("img/background1920x1080.jpg") repeat-y top left;
+  /*background: url("img/background1920x1080.jpg") repeat-y top left;*/
+}
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+  /*background: linear-gradient(to bottom, white, white 70%, transparent);*/
 }
 
 nav li {
@@ -9,6 +17,9 @@ nav li {
 nav li:hover {
 }
 
+ul {
+  padding: 0;
+}
 li {
   list-style-type: none;
 }

@@ -5,20 +5,20 @@
   <div class="emissions-liste">
     {% for emission in emissions %}
       <div>
-        <div class="emission-details">
+        <div class="emission-details"  style="background-image: url('{% static 'radio/img/cover-' %}{{ emission.id }}.jpg');">
           <div class="">
             <!--<img class="emission-image" src="{% static 'radio/img/default.jpg' %}">-->
           </div>
           <div class="emission-infos">
-            <h3><span class="emission-titre"><a href="{% url 'radio:emission_details' emission.id %}">
-            {{emission.nom}}</a></span></h3>
-            <h4><span class="emission-titre">Avec
-              {% for contributeur in emission.contributeurs.all %}
-                <span class="contributeurs-item"><a href="{% url 'radio:animateur_details' contributeur.id %}">
-                   {{contributeur.prenom}} {{contributeur.nom}}
-                </a></span>
-              {% endfor %}
-            </span></h4>
+              <div class="emission-titres"><h3><span class="emission-titre"><a href="{% url 'radio:emission_details' emission.id %}">
+              {{emission.nom}}</a></span></h3>
+              <h4><span class="emission-titre">
+                {% for contributeur in emission.contributeurs.all %}
+                  <span class="contributeurs-item"><a href="{% url 'radio:animateur_details' contributeur.id %}">
+                     {{contributeur.prenom}} {{contributeur.nom}}
+                  </a></span>
+                {% endfor %}
+              </span></h4></div>
             <p><span class="emission-description description">{{emission.description}}</span></p>
             {% if emission.dernier_episode %}
             <p class="reecouter-emission"><a class="lien-emission" href="{% url 'radio:enregistrement_details' emission.dernier_episode.id %}">
