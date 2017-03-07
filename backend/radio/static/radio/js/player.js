@@ -52,7 +52,7 @@ function togglePlayPause(el, target) {
     ws.playPause();
   }
   else {
-    console.log(target);
+    console.log(target)
     var audio_container = document.getElementById(target);
     ws = loadAudio(audio_container);
     waveforms[target] = ws;
@@ -61,4 +61,18 @@ function togglePlayPause(el, target) {
     });
   }
   $(el).find('.fa').toggleClass("fa-play fa-pause");
+}
+
+function toggleLive(){
+  var audio = $('#xray-stream');
+  var icon = $('#now-playing-icon');
+
+  if (audio.paused || audio.duration == 0){
+    audio.play();
+  }
+  else {
+    audio.pause();
+  }
+
+  icon.toggleClass("fa-pause fa-play");
 }

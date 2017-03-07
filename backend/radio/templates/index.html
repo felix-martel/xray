@@ -28,7 +28,23 @@
   {% endblock %}
 
   <div id="main">
-    {% block content %}{% endblock %}
+    {% block content %}
+      <div class="radio-container">
+        <div class="emission-details direct-infos" style="background-image: url('{% static 'radio/img/platine.gif' %}');" onclick="toggleLive();">
+          <h3>
+            <span class="titre-principal">
+              <i id="now-playing-icon" class="fa fa-play"></i>
+              X-Ray : le direct
+            </span>
+          </h3>
+        </div>
+        <audio id="xray-stream" autoplay>
+          <source src="http://129.104.201.173:8080" type="audio/mp3">
+        </audio>
+    </div>
+
+
+    {% endblock %}
   </div>
 
 </body>

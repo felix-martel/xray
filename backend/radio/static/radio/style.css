@@ -38,6 +38,22 @@ nav a{
 nav a:hover {
     background-color: rgba(230, 230, 230, 0.8);
 }
+
+.direct-infos {
+  min-height: 50rem;
+
+}
+
+.titre-principal {
+  color: white;
+  font-size: 5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.titre-principal:hover {
+  font-style: italic;
+  opacity: 0.8;
+}
 /*
 .emission-image {
   width: 10rem;
