@@ -6,6 +6,9 @@ class Animateur(models.Model):
     prenom = models.CharField(max_length=50)
     surnom = models.CharField(max_length=50)
     role = models.CharField(max_length=100)
+    presentation = models.TextField(default="")
+    allow_contact = models.BooleanField(default=False)
+    email = models.EmailField(null=True)
 
     def __str__(self):
         if len(self.surnom) > 0:

@@ -1,0 +1,60 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="radio-container">
+  <div class="main-panel">
+    <div class="faq-item" style="background-image: url('{% static 'radio/img/faq/on-air.jpg'%}');">
+      <h3 class="faq-titre"><span class="titre">Tu veux ... <span class="faq-question">participer à une émission</span></span></h3>
+    <p class="faq-reponse"><span class="description">ça tombe bien, on a toujours besoin d'invités et de nouvelles
+      voix !<br/>Contacte les animateurs de l'émission concernée
+    </span></p>
+    <a class="bouton-xray" href="mailto:felix.martel@polytechnique.edu"><i class="fa fa-envelope">
+    </i>Contacter</a>
+    </div>
+
+    <div class="faq-item" style="background-image: url('{% static 'radio/img/faq/img-2.jpg'%}');">
+      <h3 class="faq-titre"><span class="titre">Tu veux ... <span class="faq-question">monter ton émission</span></span></h3>
+      <p class="faq-reponse"><span class="description">On te prête le local ! On peut aussi te fournir un respo technique pour servir en régie,
+        proposer des chroniqueurs ou t'aider à préparer l'émission. ça vaut aussi si tu
+        veux enregistrer ton propre podcast pour buzzer sur les internets.
+      </span></p>
+    </div>
+
+    <div class="faq-item" style="background-image: url('{% static 'radio/img/faq/img-1.jpg'%}');">
+      <h3 class="faq-titre"><span class="titre">Tu veux ... <span class="faq-question">emprunter du matos</span></span></h3>
+      <p class="faq-reponse"><span class="description">On a des micros XLR, des enregistreurs numériques Zoom et Sony,
+        une flopée de câbles et pleins d'autres trucs qui traînent.
+      </span></p>
+    </div>
+
+    <div class="faq-item" style="background-image: url('{% static 'radio/img/faq/cd-1.jpg'%}');">
+      <h3 class="faq-titre"><span class="titre">Tu veux ... <span class="faq-question">emprunter des CD</span></span></h3>
+      <p class="faq-reponse"><span class="description">La diskhâle moderne est pleine de
+        CD pop/rock/variété/autres que personne n'écoute jamais faut de savoir
+        qu'ils sont là, et c'est dommage. Alors n'hésite pas à passer au local
+        pour farfouiller là-dedans et emprunter ce que tu veux.
+      </span></p>
+    </div>
+
+    <div class="faq-item" style="background-image: url('{% static 'radio/img/faq/mic-1.jpg'%}');">
+      <h3 class="faq-titre"><span class="titre">Tu veux ... <span class="faq-question">utiliser le local pour ton binet</span></span></h3>
+      <p class="faq-reponse"><span class="description">Que ce soit pour faire des enregistrements persos, des interviews,
+        des prises de son quelconques, <span class="rature">faire des
+          shotline pour ta Kès pipo</span>, il est là, chaud et accueillant.
+      </span></p>
+    </div>
+
+    <div class="faq-item" style="background-image: url('{% static 'radio/img/faq/mic-3.jpg'%}');">
+      <h3 class="faq-titre"><span class="titre">Tu veux ... <span class="faq-question">rencontrer des femmes de ta région</span></span></h3>
+      <p class="faq-reponse"><span class="description">Pas de carte de crédit, pas d'arnaque, rencontre des célibataires exigeant.e.s et
+        des femmes mûres en manque de sexe chez notre partenaire privilégié.
+      </span></p>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

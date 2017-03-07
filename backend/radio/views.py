@@ -59,6 +59,10 @@ class EnregistrementDetailView(generic.DetailView):
     model = Enregistrement
     template_name = 'radio/enregistrement-details.html'
 
+def faqView(request):
+    template_name = 'radio/faq.html'
+    return render(request, template_name, {})
+
 def enregistrement_details(request, emission_id, edition_id):
     #enreg = Enregistrement.objects.filter(emission_id=emission_id, edition_id=edition_id)
     enregistrement = get_object_or_404(Enregistrement, emission_id=emission_id, edition_id=edition_id)

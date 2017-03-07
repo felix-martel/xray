@@ -27,15 +27,20 @@
 
 
 
-.emission-details, .episode-details {
+.emission-details, .episode-details, .faq-item {
   padding: 2rem;
   margin-bottom: 2rem;
   border-radius: 2px;
   box-shadow: 0 0 0.5rem 0 rgba(50, 50, 50, 0.7);
+  background-size: cover;
 }
 
-.emission-details:hover, .episode-details:hover {
+.emission-details:hover, .episode-details:hover, .faq-item:hover {
   box-shadow: 0 0 0.5rem 0.1rem rgba(50, 50, 50, 0.7);
+}
+
+.faq-item {
+  background-size: cover;
 }
 
 .emission-titre  a, .titre {

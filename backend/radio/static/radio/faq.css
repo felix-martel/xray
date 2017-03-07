@@ -1,0 +1,17 @@
+.faq-titre {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: rgba(50, 50, 50, 1);
+}
+
+.faq-titre .faq-question {
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.faq-titre .faq-question:hover {
+  font-style: normal;
+}
+.faq-reponse {
+
+}

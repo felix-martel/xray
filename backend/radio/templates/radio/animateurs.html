@@ -1,13 +1,31 @@
 {% extends "index.html" %}
-
+{% load static %}
 {% block content %}
-
-<h1>Animateurs</h1>
-<ul>
-  {% for anim in animateurs %}
-    <li><a href="{% url 'radio:animateur_details' anim.id %}">
-      {{anim.prenom}} {{anim.nom}}
-    </a></li>
-  {% endfor %}
-</ul>
+<div class="radio-container">
+  <ul>
+    {% for anim in animateurs %}
+      <div class="animateur">
+        <div class="animateur-img">
+          <img src="{% static 'radio/img/animateur.jpg' %}"/>
+        </div>
+        <div class="animateur-infos">
+          <h3>
+            <a class="titre" href="{% url 'radio:animateur_details' anim.id %}">
+              {{anim.prenom}} {{anim.nom}}
+            </a>
+          </h3>
+          <p>
+            <span class="description">
+            {{anim.presentation}}
+            </span>
+          </p>
+         {% if anim.allow_contact %}
+          <a class="bouton-xray" href="mailto:{{anim.email}}"><i class="fa fa-envelope">
+          </i>Contacter</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </ul>
+</div>
 {% endblock %}

@@ -15,6 +15,8 @@ urlpatterns = [
     url(r'^emissions/(?P<pk>[0-9]+)/animateurs/$', views.EmissionAnimateursView.as_view(), name='emission-animateurs'),
     url(r'^emissions/(?P<emission_id>[0-9]+)/(?P<enregistrement_id>[0-9]+)/$', views.EnregistrementDetailView.as_view(), name='emission_details'),
 
+    url(r'^faq/$', views.faqView, name='faq'),
+
     url(r'^enregistrements/$', views.EnregistrementListeView.as_view(), name='enregistrements_liste'),
     url(r'^enregistrements/(?P<pk>[0-9]+)/$', views.EnregistrementDetailView.as_view(), name='enregistrement_details'),
 ]
