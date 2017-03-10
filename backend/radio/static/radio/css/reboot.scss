@@ -1,0 +1,32 @@
+body {
+  font-family: Roboto, Scada, sans-serif;
+  background-color: #eee;
+  font-size: 16px;
+  /*background: url("img/background1920x1080.jpg") repeat-y top left;*/
+}
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: 1000;
+  /*background: linear-gradient(to bottom, white, white 70%, transparent);*/
+}
+
+nav li {
+  display: inline-block;
+}
+nav li:hover {
+}
+
+ul {
+  padding: 0;
+}
+li {
+  list-style-type: none;
+  padding: 0;
+}
+
+a, a:hover {
+  text-decoration: none;
+}

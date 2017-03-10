@@ -82,3 +82,15 @@ function toggleLive(){
 
   icon.toggleClass("fa-pause fa-play");
 }
+
+function playPauseById(el, elementId){
+  var audio = document.getElementById(elementId);
+  var icon = $(el);
+  if (audio.paused || audio.duration == 0){
+    audio.play();
+  }
+  else {
+    audio.pause();
+  }
+  icon.toggleClass("fa-play fa-pause");
+}

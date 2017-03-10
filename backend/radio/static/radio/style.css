@@ -1,60 +1,123 @@
 body {
-  font-family: Scada, sans-serif;
-  /*background: url("img/background1920x1080.jpg") repeat-y top left;*/
-}
+  font-family: Roboto, Scada, sans-serif;
+  background-color: #eee;
+  font-size: 16px;
+  /*background: url("img/background1920x1080.jpg") repeat-y top left;*/ }
+
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: white;
+  background-color: transparent;
   z-index: 1000;
-  /*background: linear-gradient(to bottom, white, white 70%, transparent);*/
-}
+  /*background: linear-gradient(to bottom, white, white 70%, transparent);*/ }
 
 nav li {
-  display: inline-block;
-}
-nav li:hover {
-}
+  display: inline-block; }
 
 ul {
-  padding: 0;
-}
+  padding: 0; }
+
 li {
   list-style-type: none;
-}
+  padding: 0; }
 
 a, a:hover {
-  text-decoration: none;
-}
+  text-decoration: none; }
 
-nav a{
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  margin: 0.5rem;
-  border-radius: 0.5rem;
-}
+nav {
+  padding: 1rem; }
+
+nav a {
+  padding: 1rem 3rem;
+  margin: 1rem 3rem;
+  border-radius: 100rem; }
 
 nav a:hover {
-    background-color: rgba(230, 230, 230, 0.8);
-}
+  background-color: #B21B15;
+  color: white; }
 
-.direct-infos {
-  min-height: 50rem;
+.animateur-img {
+  width: 20rem;
+  display: inline-block;
+  border-radius: 2px;
+  vertical-align: top;
+  box-shadow: 0 0 0.5rem 0 rgba(50, 50, 50, 0.7); }
 
-}
+.animateur-img img {
+  width: 100%; }
 
-.titre-principal {
-  color: white;
-  font-size: 5rem;
+.animateur-infos {
+  display: inline-block; }
+
+.animateur-infos p, .animateur-infos h3 {
+  display: inline-block; }
+
+.animateur {
+  margin-bottom: 3rem;
+  vertical-align: top; }
+
+.radio-container {
+  margin: 0 auto;
+  margin-top: 4rem; }
+
+@media screen and (min-width: 1px) {
+  .radio-container {
+    width: 100%;
+    padding: 0; } }
+@media screen and (min-width: 700px) {
+  .radio-container {
+    width: 95%;
+    padding: 4rem 4rem; } }
+@media screen and (min-width: 1000px) {
+  .radio-container {
+    width: 900px; } }
+.emission-panel {
+  background-color: white;
+  padding: 0;
+  box-sizing: border-box; }
+
+.emission-panel-content {
+  padding: 5rem;
+  padding-bottom: 2rem; }
+
+.emission-header {
+  margin-bottom: 3rem; }
+
+.emission-header img {
+  display: inline-block;
+  height: 20rem;
+  width: 20rem;
+  margin-top: -15rem;
+  margin-right: 5rem;
+  border-radius: 4px; }
+
+.emission-infos {
+  display: inline-block; }
+
+.emission-infos h1 {
   font-weight: bold;
-  cursor: pointer;
-}
-.titre-principal:hover {
-  font-style: italic;
-  opacity: 0.8;
-}
-/*
-.emission-image {
-  width: 10rem;
-}
+  text-transform: uppercase; }
+
+.emission-description {
+  padding: 0;
+  margin: 0; }
+
+.display-more {
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box; }
+
+.display-more:hover {
+  background-color: lightgrey; }
+
+.episode-panel {
+  padding: 3rem;
+  width: 100%;
+  margin: 0;
+  background-color: lightgrey; }
+
+.episode-panel:nth-of-type(even) {
+  background-color: white; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,70 @@
+
+.radio-container {
+  margin: 0 auto;
+  margin-top: 4rem;
+}
+@media screen and (min-width: 1px){
+.radio-container {
+  width: 100%;
+  padding: 0;
+}}
+@media screen and (min-width: 700px){
+  .radio-container {
+    width: 95%;
+    padding: 4rem 4rem
+}}
+@media screen and (min-width: 1000px) {
+  .radio-container {
+    width: 900px;
+}}
+
+.emission-panel {
+  background-color: white;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.emission-panel-content {
+  padding: 5rem;
+  padding-bottom: 2rem;
+}
+.emission-header {
+  margin-bottom: 3rem;
+}
+.emission-header img {
+  display: inline-block;
+  height: 20rem;
+  width: 20rem;
+  margin-top: -15rem;
+  margin-right: 5rem;
+  border-radius: $radius-s;
+}
+.emission-infos {
+  display: inline-block;
+}
+.emission-infos h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.emission-description {
+  padding: 0;
+  margin: 0;
+}
+.display-more {
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+.display-more:hover {
+  background-color: lightgrey;
+}
+
+.episode-panel {
+  padding: 3rem;
+  width: 100%;
+  margin: 0;
+  background-color: lightgrey;
+}
+.episode-panel:nth-of-type(even) {
+  background-color: white;
+}
