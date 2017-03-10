@@ -1,0 +1,4 @@
+# IGNORE
+# Database config
+db.cnf
+log/

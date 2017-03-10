@@ -63,15 +63,21 @@ function togglePlayPause(el, target) {
   $(el).find('.fa').toggleClass("fa-play fa-pause");
 }
 
+var gif = $('#looping-div');
+var gif_url = gif.css('background-image');
+
 function toggleLive(){
-  var audio = $('#xray-stream');
+  var audio = document.getElementById('xray-stream');
   var icon = $('#now-playing-icon');
+  console.log(gif_url);
 
   if (audio.paused || audio.duration == 0){
     audio.play();
+    gif.css('background-image', gif_url);
   }
   else {
     audio.pause();
+    gif.css('background-image', 'none');
   }
 
   icon.toggleClass("fa-pause fa-play");
