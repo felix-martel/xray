@@ -17,11 +17,11 @@
   {% block menu %}
   <nav>
     <ul>
-      <li><a class="button" href="{% url 'radio:direct' %}">Le direct</a></li>
-      <li><a class="button" href="{% url 'radio:emissions_liste' %}">Emissions</a></li>
-      <li><a class="button" href="{% url 'radio:enregistrements_liste' %}">Réécouter</a></li>
-      <li><a class="button" href="{% url 'radio:animateurs_liste' %}">Animateurs</a></li>
-      <li><a class="button" href="{% url 'radio:faq' %}">Participez !</a></li>
+      <li><a href="{% url 'radio:direct' %}">Le direct</a></li>
+      <li><a href="{% url 'radio:emissions_liste' %}">Emissions</a></li>
+      <li><a href="{% url 'radio:enregistrements_liste' %}">Réécouter</a></li>
+      <li><a href="{% url 'radio:animateurs_liste' %}">Animateurs</a></li>
+      <li><a href="{% url 'radio:faq' %}">Participez !</a></li>
     </ul>
   </nav>
   {% endblock %}

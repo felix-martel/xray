@@ -40,6 +40,53 @@ p {
   color: #404040;
   border-radius: 4px; }
 
+.button, .button:visited, .alt-button, .secondary-button, .reverse-button {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0.8rem 0 0;
+  font-size: 1rem;
+  color: #F7404B;
+  background-color: transparent;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 4px;
+  font-family: Montserrat, sans-serif;
+  outline: none; }
+  .button .fa, .alt-button .fa, .secondary-button .fa, .reverse-button .fa {
+    margin-right: 0.5rem; }
+
+.button, .button:visited, .button:visited {
+  color: #F7404B;
+  border-color: #F7404B;
+  background-color: transparent; }
+  .button:hover, .button:visited:hover, .button:visited:hover {
+    background-color: #F7404B;
+    color: white; }
+
+.alt-button {
+  color: #00fa9f;
+  border-color: #00fa9f; }
+  .alt-button:hover {
+    background-color: #00fa9f;
+    color: white; }
+
+.secondary-button {
+  background-color: #EAEAEA;
+  border-color: #EAEAEA;
+  color: #404040; }
+  .secondary-button:hover {
+    background-color: gray;
+    border-color: gray;
+    color: white; }
+
+.reverse-button {
+  background-color: transparent;
+  border-color: white;
+  color: white; }
+  .reverse-button:hover {
+    background-color: white;
+    color: #F7404B; }
+
 .tag {
   display: inline-block;
   padding: 0.3rem 0.6rem;
@@ -56,6 +103,9 @@ p {
     color: white; }
   .tag:hover {
     background-color: #0aae72; }
+
+.waveform-container {
+  color: transparent; }
 
 .radio-container {
   margin: 0 auto;
@@ -104,6 +154,9 @@ nav {
 .animateur {
   margin-bottom: 3rem;
   vertical-align: top; }
+
+.emission-wrapper {
+  margin-bottom: 5rem; }
 
 .emission-panel {
   padding: 0; }
@@ -163,7 +216,8 @@ nav {
   .episode-panel a:hover {
     border-bottom: 2px solid #404040; }
   .episode-panel .fa {
-    margin-right: 0.5rem; }
+    margin-right: 0.5rem;
+    cursor: pointer; }
   .episode-panel .episode-date {
     font-style: italic;
     color: #F7404B; }
@@ -173,5 +227,12 @@ nav {
 
 .episode-panel:last-of-type {
   border-radius: 0 0 4px 4px; }
+
+.episode-details h1 a, .episode-details h1:visited {
+  color: white; }
+.episode-details h1 {
+  color: white;
+  font-size: 4rem;
+  margin-bottom: 0; }
 
 /*# sourceMappingURL=style.css.map */

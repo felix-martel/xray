@@ -5,27 +5,27 @@
 
 
 <div class="radio-container">
-  <li class="episode-details"   style="background-image: url('{% static 'radio/img/cover-' %}{{ enregistrement.emission.id }}.jpg');">
-    <h3><span class="emission-titre">
+  <div class="episode-details">
+    <h1>
       <a href="{% url 'radio:enregistrement_details' enregistrement.id %}">
         {{ enregistrement.emission.nom }} #{{ enregistrement.edition_id }} : {{ enregistrement.titre}}
       </a>
-    </span>
-    </h3>
-    <h4>
-    <span class="contributeurs-item emission-titre">
+    </h1>
+    <span class="tag">
       <a href="{% url 'radio:emission_details' enregistrement.emission.id %}">
         {{enregistrement.emission.nom}}
-      </a></span>
-    <span class="titre">Emission du {{ enregistrement.date_diffusion|date:'d/m'}}</span></h4>
+      </a>
+    </span>
+    <span class="tag">
+      Emission du {{ enregistrement.date_diffusion|date:'d/m'}}
+    </span>
     <p>
-      <span class="description">
         {{ enregistrement.description }}
-      </span>
     </p>
-    <button type="button" class="bouton-xray" onclick="togglePlayPause(this, 'enregistrement-{{enregistrement.emission.id}}-{{enregistrement.edition_id}}');"><i class="fa fa-play"></i>Ecouter</button>
+    <button type="button" class="reverse-button" onclick="togglePlayPause(this, 'enregistrement-{{enregistrement.emission.id}}-{{enregistrement.edition_id}}');"><i class="fa fa-play"></i>Ecouter</button>
+    <a class="reverse-button" href="{% static 'radio/audio/' %}{{enregistrement.emission_url}}" download="{{enregistrement.emission.nom}} #{{enregistrement.edition_id}}.mp3"><i class="fa fa-download"></i>Télécharger</a>
     <div id="enregistrement-{{enregistrement.emission.id}}-{{enregistrement.edition_id}}" class="waveform-container">{{enregistrement.emission_url}}</div>
-  </li>
+  </div>
 </div>
 
 {% endblock %}
