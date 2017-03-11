@@ -87,6 +87,22 @@ p {
     background-color: white;
     color: #F7404B; }
 
+.panel h1, .panel h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #404040;
+  margin: 0; }
+  .panel h1 a, .panel h2 a {
+    color: inherit; }
+
+.panel h1 {
+  font-size: 3rem; }
+
+.panel h2 {
+  font-size: 1.8rem;
+  color: gray;
+  font-weight: normal; }
+
 .tag {
   display: inline-block;
   padding: 0.3rem 0.6rem;
@@ -104,7 +120,7 @@ p {
   .tag:hover {
     background-color: #0aae72; }
 
-.waveform-container {
+.waveform-container, .waveform-container-no-autoload {
   color: transparent; }
 
 .radio-container {
@@ -123,7 +139,8 @@ p {
 nav {
   padding: 1rem 0;
   width: 100%;
-  white-space: nowrap; }
+  white-space: nowrap;
+  background-color: #F7404B; }
   nav li {
     width: 20%;
     text-align: center;
@@ -186,13 +203,6 @@ nav {
   min-height: 10rem;
   box-sizing: border-box; }
 
-.emission-infos h1 {
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #404040;
-  font-size: 3rem;
-  margin: 0; }
-
 .emission-description {
   padding: 0;
   margin: 0; }
@@ -228,7 +238,7 @@ nav {
 .episode-panel:last-of-type {
   border-radius: 0 0 4px 4px; }
 
-.episode-details h1 a, .episode-details h1:visited {
+.episode-details h1 a, .episode-details h1 a:visited {
   color: white; }
 .episode-details h1 {
   color: white;

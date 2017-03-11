@@ -73,6 +73,23 @@ p {
   }
 }
 
+.panel h1, .panel h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $dark-gray;
+  margin: 0;
+  & a {
+    color: inherit;
+  }
+}
+.panel h1 {
+font-size: 3rem;
+}
+.panel h2 {
+  font-size: 1.8rem;
+  color: $gray;
+  font-weight: normal;
+}
 
 .tag {
   display: inline-block;
@@ -93,7 +110,7 @@ p {
     background-color: $very-dark-turquoise;
   }
 }
-.waveform-container {
+.waveform-container, .waveform-container-no-autoload {
   color: transparent;
 }
 .radio-container {

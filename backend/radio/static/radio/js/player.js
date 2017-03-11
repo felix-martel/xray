@@ -16,13 +16,19 @@ $(document).ready(function(){
 
 });
 
-function loadAudio(audio_container){
+function loadAudio(audio_container, alt_color=false){
   console.log(audio_container.id)
   var audioURL = '../../../static/radio/audio/' + audio_container.innerHTML;
+  var wave_color = 'rgba(255, 255, 255, 0.7)';
+  var progress_color = 'white';
+  if (alt_color){
+    wave_color = 'lightgray';
+    progress_color = '#00fa9f';
+  }
   var ws = WaveSurfer.create({
     container: '#' + audio_container.id,
-    waveColor: 'rgba(255, 255, 255, 0.7)',
-    progressColor: 'white',
+    waveColor: wave_color,
+    progressColor: progress_color,
     cursorColor: 'transparent',
     barWidth: 3,
   });
@@ -41,7 +47,9 @@ function togglePlayPause(el, target) {
   else {
     console.log(target)
     var audio_container = document.getElementById(target);
-    ws = loadAudio(audio_container);
+    var alt_color = $(audio_container).hasClass("waveform-container-no-autoload");
+    console.log(audio_container.className);
+    ws = loadAudio(audio_container, alt_color);
     waveforms[target] = ws;
     ws.on('ready', function () {
       ws.play();
