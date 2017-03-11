@@ -1,16 +1,43 @@
 {% extends "index.html" %}
+{% load static %}
 
 {% block content %}
-
-<h1>{{ animateur.prenom}} {{ animateur.nom}}</h1>
-<p>{{ animateur.role }} </p>
-<h4>Ses dernières émissions : </h4>
-<ul>
-  {% for enregistrement in ses_derniers_enregistrements %}
-    <li><a href="{% url 'radio:emission_details' enregistrement.id}">
-      <strong>{{ enregistrement.emission.nom }} : </strong>
-      {{ enregistrement.titre }}
-    </a></li>
-  {% endfor %}
-</ul>
+<div class="radio-container">
+  <div class="emission-wrapper wrapper">
+    <div class="emission-panel panel">
+      <div class="emission-panel-content">
+        <div class="emission-header">
+          <img src="{% static 'radio/img/animateur.jpg' %}" class="emission-image"/>
+          <div class="emission-infos">
+            <h1 class="emission-title">{{ animateur.prenom }} {{ animateur.nom }}</h1>
+          <div class="emission-details">
+            <span class="tag">
+              <i class="fa fa-user"></i>
+              {{ animateur.role }}
+            </span>
+            <span class="tag" onclick="toggleDisplay('.episodes');">
+              <i class="fa fa-headphones"></i>{{ses_derniers_enregistrements|length }} émissions
+            </span>
+          </div></div>
+        </div>
+        <p class="emission-description">
+          {{ animateur.presentation}}
+        </p>
+      </div>
+      <div class="display-more" id="display-all" onclick="toggleDisplay('.episodes');"><i class="fa fa-ellipsis-h"></i></div>
+    </div>
+    <div class="episodes" hidden>
+      {% for episode in ses_derniers_enregistrements %}
+      <div class="episode-panel">
+        <i class="fa fa-play" onclick="playPauseById(this, 'audio-{{episode.id}}');"></i>
+        <a href="{% url 'radio:enregistrement_details' episode.id %}">
+          {{ episode.emission.nom }} #{{episode.edition_id}} : {{episode.titre}}
+        </a> -
+        <span class="episode-date">le {{ episode.date_diffusion|date:'d/m' }}</span>
+        <audio id="audio-{{episode.id}}" src="{% static 'radio/audio/demo.wav' %}"/>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 {% endblock %}

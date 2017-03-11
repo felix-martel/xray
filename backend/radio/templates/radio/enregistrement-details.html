@@ -24,8 +24,9 @@
     </p>
     <button type="button" class="reverse-button" onclick="togglePlayPause(this, 'enregistrement-{{enregistrement.emission.id}}-{{enregistrement.edition_id}}');"><i class="fa fa-play"></i>Ecouter</button>
     <a class="reverse-button" href="{% static 'radio/audio/' %}{{enregistrement.emission_url}}" download="{{enregistrement.emission.nom}} #{{enregistrement.edition_id}}.mp3"><i class="fa fa-download"></i>Télécharger</a>
-    <div id="enregistrement-{{enregistrement.emission.id}}-{{enregistrement.edition_id}}" class="waveform-container">{{enregistrement.emission_url}}</div>
-  </div>
+    </div>
 </div>
+<div id="enregistrement-{{enregistrement.emission.id}}-{{enregistrement.edition_id}}" class="waveform-container">{{enregistrement.emission_url}}</div>
+
 
 {% endblock %}
