@@ -1,0 +1,51 @@
+body {
+  background-color: $red;
+  color: white;
+}
+p {
+  line-height: 150%;
+}
+.wrapper {
+  box-shadow: $shadow;
+  border-radius: $radius-s;
+  background-color: white;
+}
+
+.panel {
+  color: $dark-gray;
+  border-radius: $radius-s;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  margin: 0.1rem;
+  background-color: $dark-turquoise;
+  color: white;
+  cursor: pointer;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  & a, & a:visited {
+    color: white;
+  }
+  &:hover {
+    background-color: $very-dark-turquoise;
+  }
+}
+.radio-container {
+  margin: 0 auto;
+  margin-top: 10rem;
+}
+@media screen and (min-width: 1px){.radio-container {
+  width: 100%;}}
+@media screen and (min-width: 700px){.radio-container {
+    width: 95%;}}
+@media screen and (min-width: 1000px) {.radio-container {
+    width: 900px;}}
+
+// Fredoka One
+// Overpass (6 styles, généraliste)
+// Convergence, Averia Serif Libre

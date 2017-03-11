@@ -1,14 +1,19 @@
 nav {
-  padding: 1rem;
-}
+  padding: 1rem 0;
+  width: 100%;
+  white-space: nowrap;
 
-nav a {
-  padding: 1rem 3rem;
-  margin: 1rem 3rem;
-  border-radius: 100rem;
-}
-
-nav a:hover {
-  background-color: $red;
-  color: white;
+  li {
+    width: 20%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  a, a:hover, a:visited, a:focus {
+    color: white;
+    outline: none;
+  }
+  a:hover, a:focus {
+      border-bottom: 2px solid white;
+      background-color: transparent;
+  }
 }

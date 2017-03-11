@@ -1,6 +1,5 @@
 body {
-  font-family: Roboto, Scada, sans-serif;
-  background-color: #eee;
+  font-family: Montserrat, sans-serif;
   font-size: 16px;
   /*background: url("img/background1920x1080.jpg") repeat-y top left;*/ }
 
@@ -25,17 +24,66 @@ li {
 a, a:hover {
   text-decoration: none; }
 
-nav {
-  padding: 1rem; }
-
-nav a {
-  padding: 1rem 3rem;
-  margin: 1rem 3rem;
-  border-radius: 100rem; }
-
-nav a:hover {
-  background-color: #B21B15;
+body {
+  background-color: #F7404B;
   color: white; }
+
+p {
+  line-height: 150%; }
+
+.wrapper {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  background-color: white; }
+
+.panel {
+  color: #404040;
+  border-radius: 4px; }
+
+.tag {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  margin: 0.1rem;
+  background-color: #0bd38a;
+  color: white;
+  cursor: pointer;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem; }
+  .tag a, .tag a:visited {
+    color: white; }
+  .tag:hover {
+    background-color: #0aae72; }
+
+.radio-container {
+  margin: 0 auto;
+  margin-top: 10rem; }
+
+@media screen and (min-width: 1px) {
+  .radio-container {
+    width: 100%; } }
+@media screen and (min-width: 700px) {
+  .radio-container {
+    width: 95%; } }
+@media screen and (min-width: 1000px) {
+  .radio-container {
+    width: 900px; } }
+nav {
+  padding: 1rem 0;
+  width: 100%;
+  white-space: nowrap; }
+  nav li {
+    width: 20%;
+    text-align: center;
+    box-sizing: border-box; }
+  nav a, nav a:hover, nav a:visited, nav a:focus {
+    color: white;
+    outline: none; }
+  nav a:hover, nav a:focus {
+    border-bottom: 2px solid white;
+    background-color: transparent; }
 
 .animateur-img {
   width: 20rem;
@@ -57,47 +105,40 @@ nav a:hover {
   margin-bottom: 3rem;
   vertical-align: top; }
 
-.radio-container {
-  margin: 0 auto;
-  margin-top: 4rem; }
-
-@media screen and (min-width: 1px) {
-  .radio-container {
-    width: 100%;
-    padding: 0; } }
-@media screen and (min-width: 700px) {
-  .radio-container {
-    width: 95%;
-    padding: 4rem 4rem; } }
-@media screen and (min-width: 1000px) {
-  .radio-container {
-    width: 900px; } }
 .emission-panel {
-  background-color: white;
-  padding: 0;
-  box-sizing: border-box; }
+  padding: 0; }
 
 .emission-panel-content {
-  padding: 5rem;
+  position: relative;
+  padding: 3rem;
   padding-bottom: 2rem; }
 
 .emission-header {
-  margin-bottom: 3rem; }
+  margin-bottom: 2rem; }
 
 .emission-header img {
   display: inline-block;
-  height: 20rem;
-  width: 20rem;
-  margin-top: -15rem;
-  margin-right: 5rem;
-  border-radius: 4px; }
+  height: 15rem;
+  width: 15rem;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  vertical-align: top;
+  position: absolute;
+  top: -2rem;
+  left: 3rem; }
 
 .emission-infos {
-  display: inline-block; }
+  display: inline-block;
+  padding-left: 18rem;
+  min-height: 10rem;
+  box-sizing: border-box; }
 
 .emission-infos h1 {
   font-weight: bold;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  color: #404040;
+  font-size: 3rem;
+  margin: 0; }
 
 .emission-description {
   padding: 0;
@@ -106,18 +147,31 @@ nav a:hover {
 .display-more {
   width: 100%;
   text-align: center;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  border-radius: 0 0 4px 4px; }
 
 .display-more:hover {
-  background-color: lightgrey; }
+  background-color: #EAEAEA; }
 
 .episode-panel {
-  padding: 3rem;
-  width: 100%;
+  padding: 2rem;
   margin: 0;
-  background-color: lightgrey; }
+  background-color: #EFEFEF;
+  color: #404040; }
+  .episode-panel a, .episode-panel a:visited, .episode-panel a:hover {
+    color: #404040; }
+  .episode-panel a:hover {
+    border-bottom: 2px solid #404040; }
+  .episode-panel .fa {
+    margin-right: 0.5rem; }
+  .episode-panel .episode-date {
+    font-style: italic;
+    color: #F7404B; }
 
 .episode-panel:nth-of-type(even) {
   background-color: white; }
+
+.episode-panel:last-of-type {
+  border-radius: 0 0 4px 4px; }
 
 /*# sourceMappingURL=style.css.map */

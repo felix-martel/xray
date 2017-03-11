@@ -3,38 +3,40 @@
 
 {% block content %}
 <div class="radio-container">
-  <div class="emission-panel">
-    <div class="emission-panel-content">
-      <div class="emission-header">
-        <img src="{% static 'radio/img/cover-' %}{{ emission.id }}.jpg" class="emission-image"/>
-        <div class="emission-infos"><h1 class="emission-title">{{ emission.nom }}</h1>
-        <div class="emission-details">
-          <span>
-            <i class="fa fa-user"></i>{% for anim in emission.contributeurs.all %}
-            <a class="contributeur" href="{% url 'radio:animateur_details' anim.id %}">{{anim.prenom}} {{anim.nom}}{% endfor %}</a>
-          </span>
-          <span>
-            <i class="fa fa-headphones"></i> 9 épisodes
-          </span>
-        </div></div>
+  <div class="emission-wrapper wrapper">
+    <div class="emission-panel panel">
+      <div class="emission-panel-content">
+        <div class="emission-header">
+          <img src="{% static 'radio/img/cover-' %}{{ emission.id }}.jpg" class="emission-image"/>
+          <div class="emission-infos"><h1 class="emission-title">{{ emission.nom }}</h1>
+          <div class="emission-details">
+            <span class="tag">
+              <i class="fa fa-user"></i>{% for anim in emission.contributeurs.all %}
+              <a class="contributeur" href="{% url 'radio:animateur_details' anim.id %}">{{anim.prenom}} {{anim.nom}}{% endfor %}</a>
+            </span>
+            <span class="tag" onclick="toggleDisplay('.episodes');">
+              <i class="fa fa-headphones"></i> 9 épisodes
+            </span>
+          </div></div>
+        </div>
+        <p class="emission-description">
+          {{ emission.description}}
+        </p>
       </div>
-      <p class="emission-description">
-        {{ emission.description}}
-      </p>
+      <div class="display-more" id="display-all" onclick="toggleDisplay('.episodes');"><i class="fa fa-ellipsis-h"></i></div>
     </div>
-    <div class="display-more" id="display-all" onclick="$('.episodes').toggle();"><i class="fa fa-ellipsis-h"></i></div>
-  </div>
-  <div class="episodes" hidden>
-    {% for episode in derniers_enregistrements %}
-    <div class="episode-panel">
-      <i class="fa fa-play" onclick="playPauseById(this, 'audio-{{episode.id}}');"></i>
-      <a href="{% url 'radio:enregistrement_details' episode.id %}">
-        {{ emission.nom }} #{{episode.edition_id}} : {{episode.titre}}
-      </a> -
-      <span class="episode-date">le {{ episode.date_diffusion|date:'d/m' }}</span>
-      <audio id="audio-{{episode.id}}" src="{% static 'radio/audio/demo.wav' %}"/>
+    <div class="episodes" hidden>
+      {% for episode in derniers_enregistrements %}
+      <div class="episode-panel">
+        <i class="fa fa-play" onclick="playPauseById(this, 'audio-{{episode.id}}');"></i>
+        <a href="{% url 'radio:enregistrement_details' episode.id %}">
+          {{ emission.nom }} #{{episode.edition_id}} : {{episode.titre}}
+        </a> -
+        <span class="episode-date">le {{ episode.date_diffusion|date:'d/m' }}</span>
+        <audio id="audio-{{episode.id}}" src="{% static 'radio/audio/demo.wav' %}"/>
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 </div>
 

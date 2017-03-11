@@ -1,50 +1,38 @@
-
-.radio-container {
-  margin: 0 auto;
-  margin-top: 4rem;
-}
-@media screen and (min-width: 1px){
-.radio-container {
-  width: 100%;
-  padding: 0;
-}}
-@media screen and (min-width: 700px){
-  .radio-container {
-    width: 95%;
-    padding: 4rem 4rem
-}}
-@media screen and (min-width: 1000px) {
-  .radio-container {
-    width: 900px;
-}}
-
 .emission-panel {
-  background-color: white;
   padding: 0;
-  box-sizing: border-box;
 }
-
 .emission-panel-content {
-  padding: 5rem;
+  position: relative;
+  padding: 3rem;
   padding-bottom: 2rem;
 }
 .emission-header {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 .emission-header img {
   display: inline-block;
-  height: 20rem;
-  width: 20rem;
-  margin-top: -15rem;
-  margin-right: 5rem;
+  height: 15rem;
+  width: 15rem;
+  //margin-top: -15rem;
   border-radius: $radius-s;
+  box-shadow: $shadow;
+  vertical-align: top;
+  position: absolute;
+  top: -2rem;
+  left: 3rem;
 }
 .emission-infos {
   display: inline-block;
+  padding-left: 18rem;
+  min-height: 10rem;
+  box-sizing: border-box;
 }
 .emission-infos h1 {
   font-weight: bold;
   text-transform: uppercase;
+  color: $dark-gray;
+  font-size: 3rem;
+  margin: 0;
 }
 .emission-description {
   padding: 0;
@@ -54,17 +42,37 @@
   width: 100%;
   text-align: center;
   box-sizing: border-box;
+  border-radius: 0 0 $radius-s $radius-s;
 }
 .display-more:hover {
-  background-color: lightgrey;
+  background-color: $light-gray;
 }
 
 .episode-panel {
-  padding: 3rem;
-  width: 100%;
+  padding: 2rem;
   margin: 0;
-  background-color: lightgrey;
+  background-color: $very-light-gray;
+  color: $dark-gray;
+
+  a, a:visited, a:hover {
+    color: $dark-gray;
+  }
+  a:hover {
+    border-bottom: 2px solid $dark-gray;
+  }
+
+  .fa {
+    margin-right: 0.5rem;
+  }
+
+  .episode-date {
+    font-style: italic;
+    color: $red;
+  }
 }
 .episode-panel:nth-of-type(even) {
   background-color: white;
+}
+.episode-panel:last-of-type {
+  border-radius: 0 0 $radius-s $radius-s;
 }
