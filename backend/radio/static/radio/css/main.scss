@@ -1,0 +1,129 @@
+body {
+  background-color: $red;
+  color: white;
+}
+p {
+  line-height: 150%;
+}
+.wrapper {
+  box-shadow: $shadow;
+  border-radius: $radius-s;
+  background-color: white;
+}
+
+.panel {
+  color: $dark-gray;
+  border-radius: $radius-s;
+}
+
+%button {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0.8rem 0 0;
+  font-size: 1rem;
+  color: $red;
+  background-color: transparent;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: $radius-s;
+  font-family: Montserrat, sans-serif;
+  outline: none;
+  .fa {
+    margin-right: 0.5rem;
+  }
+}
+.button, .button:visited, .button:visited {
+  @extend %button;
+  color: $red;
+  border-color: $red;
+  background-color: transparent;
+  &:hover {
+    background-color: $red;
+    color: white;
+  }
+}
+.alt-button {
+  @extend %button;
+  color: $turquoise;
+  border-color: $turquoise;
+  &:hover {
+    background-color: $turquoise;
+    color: white;
+  }
+}
+.secondary-button {
+  @extend %button;
+  background-color: $light-gray;
+  border-color: $light-gray;
+  color: $dark-gray;
+  &:hover {
+    background-color: $gray;
+    border-color: $gray;
+    color: white;
+  }
+}
+.reverse-button {
+  @extend %button;
+  background-color: transparent;
+  border-color: white;
+  color: white;
+  &:hover {
+    background-color: white;
+    color: $red;
+  }
+}
+
+.panel h1, .panel h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $dark-gray;
+  margin: 0;
+  & a {
+    color: inherit;
+  }
+}
+.panel h1 {
+font-size: 3rem;
+}
+.panel h2 {
+  font-size: 1.8rem;
+  color: $gray;
+  font-weight: normal;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  margin: 0.1rem;
+  background-color: $dark-turquoise;
+  color: white;
+  cursor: pointer;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  & a, & a:visited {
+    color: white;
+  }
+  &:hover {
+    background-color: $very-dark-turquoise;
+  }
+}
+.waveform-container, .waveform-container-no-autoload {
+  color: transparent;
+}
+.radio-container {
+  margin: 0 auto;
+  margin-top: 10rem;
+}
+@media screen and (min-width: 1px){.radio-container {
+  width: 100%;}}
+@media screen and (min-width: 700px){.radio-container {
+    width: 95%;}}
+@media screen and (min-width: 1000px) {.radio-container {
+    width: 900px;}}
+
+// Fredoka One
+// Overpass (6 styles, généraliste)
+// Convergence, Averia Serif Libre

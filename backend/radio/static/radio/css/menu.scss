@@ -1,0 +1,25 @@
+nav {
+  padding: 1rem 0;
+  width: 100%;
+  white-space: nowrap;
+  background-color: $red;
+  box-sizing: border-box;
+
+  img {
+    height: 3rem;
+    margin: -1rem 0;
+  }
+  li {
+    width: 14.3%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  a, a:hover, a:visited, a:focus {
+    color: white;
+    outline: none;
+  }
+  a:hover, a:focus {
+      border-bottom: 2px solid white;
+      background-color: transparent;
+  }
+}

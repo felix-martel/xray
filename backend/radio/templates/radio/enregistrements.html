@@ -4,21 +4,45 @@
 {% block content %}
 
 <div class="radio-container">
-  <ul> {% for ep in enregistrements %}
-    <li class="episode-details"  style="background-image: url('{% static 'radio/img/cover-' %}{{ ep.emission.id }}.jpg');">
-      <h3><span class="emission-titre">
-        <a href="{% url 'radio:enregistrement_details' ep.id %}">
-          {{ ep.emission.nom }} #{{ ep.edition_id }} : {{ ep.titre}}
-        </a></span>
-      </h3>
-      <h4><span class="titre">Emission du {{ ep.date_diffusion|date:'d/m'}}</span></h4>
-      <p><span class="description">{{ ep.description }}</span></p>
-      <button type="button" class="bouton-xray" onclick="togglePlayPause(this, 'enregistrement-{{ep.emission.id}}-{{ep.edition_id}}');"><i class="fa fa-play"></i>Ecouter</button>
-      <a class="bouton-xray" href="{% static 'radio/audio/' %}{{ep.emission_url}}" download="{{ep.emission.nom}} #{{ep.edition_id}}.mp3"><i class="fa fa-download"></i>Télécharger</a>
-      <div id="enregistrement-{{ep.emission.id}}-{{ep.edition_id}}" class="waveform-container-no-autoload">{{ep.emission_url}}</div>
-    </li>
+  <div> {% for ep in enregistrements %}
+      <div class="emission-wrapper wrapper">
+        <div class="emission-panel panel">
+          <div class="emission-panel-content">
+            <div class="emission-header">
+              <img src="{% static 'radio/img/cover-' %}{{ ep.emission.id }}.jpg" class="emission-image"/>
+              <div class="emission-infos">
+                <h2 class="emission-title">
+                  <a href="{% url 'radio:emission_details' ep.emission.id %}">
+                    {{ ep.emission.nom }} #{{ ep.edition_id }} :
+                  </a>
+                </h2>
+                <h1 class="emission-title">
+                  <a href="{% url 'radio:enregistrement_details' ep.id %}">
+                    {{ ep.titre}}
+                  </a>
+                </h1>
+              <div class="emission-details">
+                <span class="tag">
+                  <i class="fa fa-user"></i>{% for anim in ep.emission.contributeurs.all %}
+                  <a class="contributeur" href="{% url 'radio:animateur_details' anim.id %}">{{anim.prenom}} {{anim.nom}}{% endfor %}</a>
+                </span>
+                <span class="tag" onclick="toggleDisplay('.episodes');">
+                  <i class="fa fa-headphones"></i>Emission du {{ ep.date_diffusion|date:'d/m'}}
+                </span>
+              </div>
+            </div>
+            </div>
+            <p class="emission-description">
+              {{ ep.description}}
+            </p>
+            <button type="button" class="button" onclick="togglePlayPause(this, 'enregistrement-{{ep.emission.id}}-{{ep.edition_id}}');"><i class="fa fa-play"></i>Ecouter</button>
+            <a class="secondary-button" href="{% static 'radio/audio/' %}{{ep.emission_url}}" download="{{ep.emission.nom}} #{{ep.edition_id}}.mp3"><i class="fa fa-download"></i>Télécharger</a>
+            <div id="enregistrement-{{ep.emission.id}}-{{ep.edition_id}}" class="waveform-container-no-autoload">{{ep.emission_url}}</div>
+            </div>
+        </div>
+      </div>
     {% endfor %}
-  </ul>
-</di>
+  </div>
+</div>
 
 {% endblock %}

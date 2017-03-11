@@ -9,19 +9,6 @@ $(document).ready(function(){
 
   for (var i=0; i<containers.length; i++){
       var audio_container = containers[i];
-      /*console.log(audio_container.id)
-      var audioURL = '../../../static/radio/audio/' + audio_container.innerHTML;
-      var ws = WaveSurfer.create({
-        container: '#' + audio_container.id,
-        waveColor: 'rgba(200, 200, 200, 1.0)',
-        progressColor: '#D63B27',
-        cursorColor: 'transparent',
-        barWidth: 3,
-      });
-      ws.load(audioURL);
-      ws.on('ready', function () {
-        console.log(audioURL + ' ready !');
-      });*/
       ws = loadAudio(audio_container);
       waveforms[audio_container.id] = ws;
   }
@@ -29,13 +16,19 @@ $(document).ready(function(){
 
 });
 
-function loadAudio(audio_container){
+function loadAudio(audio_container, alt_color=false){
   console.log(audio_container.id)
   var audioURL = '../../../static/radio/audio/' + audio_container.innerHTML;
+  var wave_color = 'rgba(255, 255, 255, 0.7)';
+  var progress_color = 'white';
+  if (alt_color){
+    wave_color = 'lightgray';
+    progress_color = '#00fa9f';
+  }
   var ws = WaveSurfer.create({
     container: '#' + audio_container.id,
-    waveColor: 'rgba(200, 200, 200, 1.0)',
-    progressColor: '#D63B27',
+    waveColor: wave_color,
+    progressColor: progress_color,
     cursorColor: 'transparent',
     barWidth: 3,
   });
@@ -54,7 +47,9 @@ function togglePlayPause(el, target) {
   else {
     console.log(target)
     var audio_container = document.getElementById(target);
-    ws = loadAudio(audio_container);
+    var alt_color = $(audio_container).hasClass("waveform-container-no-autoload");
+    console.log(audio_container.className);
+    ws = loadAudio(audio_container, alt_color);
     waveforms[target] = ws;
     ws.on('ready', function () {
       ws.play();
@@ -81,4 +76,16 @@ function toggleLive(){
   }
 
   icon.toggleClass("fa-pause fa-play");
+}
+
+function playPauseById(el, elementId){
+  var audio = document.getElementById(elementId);
+  var icon = $(el);
+  if (audio.paused || audio.duration == 0){
+    audio.play();
+  }
+  else {
+    audio.pause();
+  }
+  icon.toggleClass("fa-play fa-pause");
 }

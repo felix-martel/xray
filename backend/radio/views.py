@@ -34,6 +34,11 @@ class EmissionsListeView(generic.ListView):
     model = Emission
     template_name = 'radio/emissions.html'
     context_object_name = 'emissions'
+    #
+    # def get_context_data(self, **kwargs):
+    #     context = super(EmissionsListeView, self).get_context_data(**kwargs)
+    #     for emission in context['emissions']:
+    #         emission.derniers_enregistrements = Enregistrement.objects.filter(emission_id = emission.id).order_by('-date_diffusion')
 
 class EmissionDetailsView(generic.DetailView):
     model = Emission
