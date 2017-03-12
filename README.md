@@ -13,4 +13,23 @@ Site web de X-Ray, la radio des élèves de l'Ecole polytechnique.
 ## Projet
 
 Projet basé sur Django.
-Librairies additionnelles : jQuery, Wavesurfer.js, FontAwesome
+Librairies additionnelles : jQuery, Wavesurfer.js, FontAwesome, Sass
+
+
+## Développeurs
+
+Vous devez avoir Python 3 installé (testé avec Python 3.5) et pip
+```
+git clone <repo_url>
+cd backend
+pip install -r requirements.txt
+```
+Ensuite, pour initialiser la base de données et charger les données, tapez :
+```
+python manage.py migrate
+python manage.py loaddata db.json
+```
+Finalement, lancez le serveur de développement avec :
+```
+python manage.py runserver
+```
