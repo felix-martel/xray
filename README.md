@@ -33,3 +33,4 @@ Finalement, lancez le serveur de développement avec :
 ```
 python manage.py runserver
 ```
+Assurez-vous d'avoir un compilateur Sass valide, qui transforme `style.scss` en `../style.css`.
