@@ -68,11 +68,9 @@ function toggleLive(){
 
   if (audio.paused || audio.duration == 0){
     audio.play();
-    gif.css('background-image', gif_url);
   }
   else {
     audio.pause();
-    gif.css('background-image', 'none');
   }
 
   icon.toggleClass("fa-pause fa-play");

@@ -1,0 +1,44 @@
+#circle {
+  background-color: white;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 2vh;
+  right: 2vh;
+  line-height: 4rem;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  cursor: pointer;
+}
+#circle:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+#circle i {
+  vertical-align: middle;
+  display: inline-block;
+  color: $red;
+}
+
+#message-container {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  height: 99vh;
+  line-height: 99vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+}
+#message {
+  font-family: Edo;
+  font-size: 14rem;
+  color: rgba(255, 255, 255, 0.4);
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 0.5;
+  text-align: left;
+}

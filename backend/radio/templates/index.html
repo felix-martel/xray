@@ -30,23 +30,17 @@
 
   <div id="main">
     {% block content %}
-      <div class="radio-container">
-        <div style="background-image: url('{% static 'radio/img/platine.jpg' %}'); background-size: cover;">
-        <div id="looping-div" class="emission-details direct-infos" style="background-image: url('{% static 'radio/img/platine.gif' %}');" onclick="toggleLive();">
-          <h3>
-            <span class="titre-principal">
-              <i id="now-playing-icon" class="fa fa-play"></i>
-              X-Ray : le direct
-            </span>
-          </h3>
-        </div>
-      </div>
+      <p id="message-container"><span id="message">
+        j'ai entendu ta voix dans la radio<br/>jacques
+      </span></p>
+
+        <p id="circle" onclick="toggleLive();">
+          <i id="now-playing-icon" class="fa fa-play"></i>
+        </p>
+
         <audio id="xray-stream" autoplay>
           <source src="http://129.104.201.173:8080" type="audio/mp3">
         </audio>
-    </div>
-
-
     {% endblock %}
   </div>
 
