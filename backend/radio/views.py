@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from django.core import serializers
 from django.views import generic
+from django.http import HttpResponse
 
-
-from .models import Animateur, Emission, Enregistrement
+from .models import Animateur, Emission, Enregistrement, Programme
 # Create your views here.
 
 class IndexView(generic.ListView):
@@ -59,6 +59,40 @@ class EnregistrementListeView(generic.ListView):
     context_object_name = 'enregistrements'
     def get_queryset(self):
         return Enregistrement.objects.order_by('-date_diffusion')
+
+def ProgrammeView(request):
+    template_name = 'radio/programmes.html'
+    tous = Programme.objects.filter(jour=Programme.TOUS).order_by('heure_debut')
+    lundi = Programme.objects.filter(jour=Programme.LUNDI).order_by('heure_debut')
+    mardi = Programme.objects.filter(jour=Programme.MARDI).order_by('heure_debut')
+    mercredi = Programme.objects.filter(jour=Programme.MERCREDI).order_by('heure_debut')
+    jeudi = Programme.objects.filter(jour=Programme.JEUDI).order_by('heure_debut')
+    vendredi = Programme.objects.filter(jour=Programme.VENDREDI).order_by('heure_debut')
+    samedi = Programme.objects.filter(jour=Programme.SAMEDI).order_by('heure_debut')
+    dimanche = Programme.objects.filter(jour=Programme.DIMANCHE).order_by('heure_debut')
+    data = [
+        {'jour': 'tous les jours', 'programmes': tous},
+        {'jour': 'lundi', 'programmes': lundi},
+        {'jour': 'mardi', 'programmes': mardi},
+        {'jour': 'mercredi', 'programmes': mercredi},
+        {'jour': 'jeudi', 'programmes': jeudi},
+        {'jour': 'vendredi', 'programmes': vendredi},
+        {'jour': 'samedi', 'programmes': samedi},
+        {'jour': 'dimanche', 'programmes': dimanche}
+    ]
+    # grille = {}
+    # s = ""
+    # for programme in Programme.objects.all():
+    #     jour = programme.jour
+    #     s += "  >jour:" + jour
+    #     s += ">titre:" + programme.titre
+    #     if jour in grille:
+    #         grille[jour][programme.id] = programme
+    #     else:
+    #         grille[jour] = {programme.id: programme}
+
+
+    return render(request, template_name,{'data': data})
 
 class EnregistrementDetailView(generic.DetailView):
     model = Enregistrement

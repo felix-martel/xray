@@ -110,6 +110,14 @@ font-size: 3rem;
     background-color: $very-dark-turquoise;
   }
 }
+.reverse-tag {
+  @extend .tag;
+  background-color: white;
+  color: $red;
+  &:hover {
+    background-color: $light-gray;
+  }
+}
 .waveform-container, .waveform-container-no-autoload {
   color: transparent;
 }

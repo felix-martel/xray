@@ -103,7 +103,7 @@ p {
   color: gray;
   font-weight: normal; }
 
-.tag {
+.tag, .reverse-tag {
   display: inline-block;
   padding: 0.3rem 0.6rem;
   margin: 0.1rem;
@@ -115,10 +115,16 @@ p {
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.1rem; }
-  .tag a, .tag a:visited {
+  .tag a, .reverse-tag a, .tag a:visited, .reverse-tag a:visited {
     color: white; }
-  .tag:hover {
+  .tag:hover, .reverse-tag:hover {
     background-color: #0aae72; }
+
+.reverse-tag {
+  background-color: white;
+  color: #F7404B; }
+  .reverse-tag:hover {
+    background-color: #EAEAEA; }
 
 .waveform-container, .waveform-container-no-autoload {
   color: transparent; }
@@ -184,16 +190,20 @@ p {
 
 nav {
   padding: 1rem 0;
+  margin: 0;
   width: 100%;
   white-space: nowrap;
   background-color: #F7404B;
   box-sizing: border-box; }
+  nav ul {
+    margin: 1rem 0; }
   nav img {
     height: 3rem;
     margin: -1rem 0; }
   nav li {
-    width: 14.3%;
+    width: 14.2%;
     text-align: center;
+    margin: 0;
     box-sizing: border-box; }
   nav a, nav a:hover, nav a:visited, nav a:focus {
     color: white;
@@ -294,5 +304,9 @@ nav {
   color: white;
   font-size: 4rem;
   margin-bottom: 0; }
+
+.jour {
+  margin-top: 3rem;
+  margin-bottom: 0rem; }
 
 /*# sourceMappingURL=style.css.map */

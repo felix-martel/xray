@@ -36,3 +36,32 @@ class Enregistrement(models.Model):
     description = models.TextField()
     def __str__(self):
         return self.emission.nom + " du " + self.date_diffusion.strftime('%d/%m')
+
+class Programme(models.Model):
+    titre = models.CharField(max_length=200, blank=True, default="")
+    description = models.TextField()
+    heure_debut = models.DateTimeField()
+    heure_fin = models.DateTimeField()
+    TOUS = '00TS'
+    LUNDI = '01LU'
+    MARDI = '02MA'
+    MERCREDI = '03ME'
+    JEUDI = '04JE'
+    VENDREDI = '05VE'
+    SAMEDI = '06SA'
+    DIMANCHE = '07DI'
+    jours_de_la_semaine = (
+        (TOUS, 'Tous les jours'),
+        (LUNDI, 'Lundi'),
+        (MARDI, 'Mardi'),
+        (MERCREDI, 'Mercredi'),
+        (JEUDI, 'Jeudi'),
+        (VENDREDI, 'Vendredi'),
+        (SAMEDI, 'Samedi'),
+        (DIMANCHE, 'Dimanche'),
+        (None, 'Choisis un jour'),
+    )
+    jour = models.CharField(max_length=4, choices=jours_de_la_semaine, default=TOUS)
+
+    def __str__(self):
+        return self.titre

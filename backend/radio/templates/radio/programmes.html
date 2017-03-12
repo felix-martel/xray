@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="radio-container">
+  <p>
+    <strong>Retrouvez ici les temps forts de la grille musicale d'X-Ray.</strong>
+    <br/>
+    La plupart du temps, on diffuse une musique éclectique, en
+    essayant de trouver un juste milieu entre nouveautés,
+    pépites méconnues et grands classiques. Vous entendrez
+    à l'antenne aussi bien de la folk, du rap, de la pop, de la
+    chanson française, du jazz, de la musique électronique.
+    <br/>
+    La nuit, on passe essentiellement du jazz, mais parfois aussi
+    des extraits audio tirés de romans, d'anciennes émissions, ou
+    de podcasts extérieurs.<br/>
+    <strong>
+      Bonne écoute sur X-Ray !
+    </strong>
+  </p>
+{% for item in data %}
+  {% if item.programmes %}
+    <h1 class="jour reverse-title">{{ item.jour }}</h1>
+    {% for prog in item.programmes %}
+      <div class="programme">
+        <p>
+          <em class="horaires">
+            {{prog.heure_debut|date:"H:i"}} - {{prog.heure_fin|date:"H:i"}} :
+          </em>
+          {% if prog.titre %}
+            <span class="reverse-tag">{{prog.titre}}</span>
+          {% endif %}
+          <br/>
+          {{ prog.description }}
+        </p>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+</div>
+{% endblock %}
