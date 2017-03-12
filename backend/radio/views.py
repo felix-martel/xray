@@ -99,8 +99,9 @@ class EnregistrementDetailView(generic.DetailView):
     template_name = 'radio/enregistrement-details.html'
 
 def faqView(request):
-    template_name = 'radio/faq.html'
-    return render(request, template_name, {})
+    template_name = 'radio/participer.html'
+    contact = get_object_or_404(Animateur, role="Prez")
+    return render(request, template_name, {"contact": contact})
 
 def enregistrement_details(request, emission_id, edition_id):
     #enreg = Enregistrement.objects.filter(emission_id=emission_id, edition_id=edition_id)

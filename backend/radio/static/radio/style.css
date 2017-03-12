@@ -131,7 +131,9 @@ p {
 
 .radio-container {
   margin: 0 auto;
-  margin-top: 10rem; }
+  margin-top: 10rem;
+  position: relative;
+  z-index: 1; }
 
 @media screen and (min-width: 1px) {
   .radio-container {
@@ -177,7 +179,8 @@ p {
   line-height: 99vh;
   box-sizing: border-box;
   overflow: hidden;
-  width: 100%; }
+  width: 100%;
+  z-index: -1; }
 
 #message {
   font-family: Edo;
@@ -308,5 +311,9 @@ nav {
 .jour {
   margin-top: 3rem;
   margin-bottom: 0rem; }
+
+.playlist-container {
+  margin-top: 2rem;
+  border-radius: 4px; }
 
 /*# sourceMappingURL=style.css.map */

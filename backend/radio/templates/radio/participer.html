@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<p id="message-container"><span id="message">
+  créer<br/>
+  participer<br/>
+  emprunter<br/>
+</span></p>
+
+
+<div class="radio-container">
+  <h1>Viens participer aux émissions !</h1>
+  <p>
+    Viens parler de ta passion à l'antenne, on a toujours besoin de nouvelles idées et de nouveaux chroniqueurs.
+    On peut te donner de l'aide pour préparer ton émission, l'enregistrer ou la monter. N'hésite pas !
+    <br/>
+    <br/>
+    Et si tu veux simplement utiliser le local pour des activités perso ou binet,
+    emprunter du matos ou écouter les CD de la diskhâle moderne,
+    <br>
+    <strong>aucun souci !</strong>
+    Contacte-nous et on t'aidera :<br/>
+    <a class="reverse-button" href="mailto:{{contact.email}}"><i class="fa fa-envelope">
+    </i>Contacter</a>
+  </p>
+</div>
+
+
+
+{% endblock %}

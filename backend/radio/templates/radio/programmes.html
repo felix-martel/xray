@@ -28,12 +28,15 @@
             {{prog.heure_debut|date:"H:i"}} - {{prog.heure_fin|date:"H:i"}} :
           </em>
           {% if prog.titre %}
-            <span class="reverse-tag">{{prog.titre}}</span>
+            <span class="reverse-tag playlist-player" data-playlist="{{prog.playlist_id}}" data-selector="#playlist-container-{{prog.id}}">
+              {{prog.titre}}
+            </span>
           {% endif %}
           <br/>
           {{ prog.description }}
         </p>
-      </div>
+        <div id="playlist-container-{{prog.id}}"></div>
+        </div>
     {% endfor %}
   {% endif %}
 {% endfor %}

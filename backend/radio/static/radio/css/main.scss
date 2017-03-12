@@ -124,6 +124,8 @@ font-size: 3rem;
 .radio-container {
   margin: 0 auto;
   margin-top: 10rem;
+  position: relative;
+  z-index: 1;
 }
 @media screen and (min-width: 1px){.radio-container {
   width: 100%;}}

@@ -42,6 +42,7 @@ class Programme(models.Model):
     description = models.TextField()
     heure_debut = models.DateTimeField()
     heure_fin = models.DateTimeField()
+    playlist_id = models.CharField(max_length=200, blank=True, default="")
     TOUS = '00TS'
     LUNDI = '01LU'
     MARDI = '02MA'
