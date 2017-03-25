@@ -19,4 +19,6 @@ urlpatterns = [
     url(r'^programme/$', views.ProgrammeView, name='programme'),
     url(r'^enregistrements/$', views.EnregistrementListeView.as_view(), name='enregistrements_liste'),
     url(r'^enregistrements/(?P<pk>[0-9]+)/$', views.EnregistrementDetailView.as_view(), name='enregistrement_details'),
+
+    url(r'^albums/$', views.AlbumListeView.as_view(), name='albums_liste'),
 ]

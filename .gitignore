@@ -1,4 +1,7 @@
 # IGNORE
 # Database config
 db.cnf
+backend/backend/__pycache__/
+backend/radio/__pycache__/
+backend/radio/migrations/
 log/

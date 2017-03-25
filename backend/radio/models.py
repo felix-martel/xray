@@ -27,6 +27,22 @@ class Emission(models.Model):
     def __str__(self):
         return self.nom
 
+class Album(models.Model):
+    nom = models.CharField(max_length=200)
+    album_art = models.CharField(max_length=200, blank=True, default='')
+    artiste = models.CharField(max_length=200)
+    annee = models.CharField(max_length=4)
+    date_creation = models.DateTimeField("Date d'ajout", auto_now_add=True)
+    description = models.TextField()
+    lien_phoenix = models.CharField(default = '', max_length=300, blank=True)
+    lien_deezer = models.CharField(default = '', max_length=300, blank=True)
+    lien_spotify = models.CharField(default = '', max_length=300, blank=True)
+    lien_youtube = models.CharField(default = '', max_length=300, blank=True)
+    def __str__(self):
+        return self.nom + " [" + self.artiste + "](" + self.annee + ")"
+
+
+
 class Enregistrement(models.Model):
     emission = models.ForeignKey(Emission)
     edition_id = models.SmallIntegerField()

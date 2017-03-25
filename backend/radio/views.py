@@ -3,7 +3,7 @@ from django.core import serializers
 from django.views import generic
 from django.http import HttpResponse
 
-from .models import Animateur, Emission, Enregistrement, Programme
+from .models import Animateur, Emission, Enregistrement, Programme, Album
 # Create your views here.
 
 class IndexView(generic.ListView):
@@ -60,6 +60,11 @@ class EnregistrementListeView(generic.ListView):
     def get_queryset(self):
         return Enregistrement.objects.order_by('-date_diffusion')
 
+class AlbumListeView(generic.ListView):
+    model = Album
+    template_name= 'radio/albums.html'
+    context_object_name = 'albums'
+
 def ProgrammeView(request):
     template_name = 'radio/programmes.html'
     tous = Programme.objects.filter(jour=Programme.TOUS).order_by('heure_debut')
@@ -107,7 +112,6 @@ def enregistrement_details(request, emission_id, edition_id):
     #enreg = Enregistrement.objects.filter(emission_id=emission_id, edition_id=edition_id)
     enregistrement = get_object_or_404(Enregistrement, emission_id=emission_id, edition_id=edition_id)
     return render(request, 'radio/enregistrement-details.html', {'enregistrement' : enregistrement})
-
 
 def animateurs_liste(request):
     animateurs = Animateur.objects.all()

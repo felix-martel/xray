@@ -85,7 +85,7 @@ if DEBUG:
             'NAME': 'xray_db',
             'USER': 'root',
             'PASSWORD': '',
-            'HOST': 'localhost'
+            'HOST': '127.0.0.1'
         }
     }
 else:
